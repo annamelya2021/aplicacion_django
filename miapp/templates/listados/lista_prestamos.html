@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Lista de Prestamos</h1>
+<ul>
+    {% for prestamo in prestamos %}
+    <li>{{ prestamo.usuario.nombre }} {{ prestamo.usuario.apellido }} - {{ prestamo.material.titulo }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
