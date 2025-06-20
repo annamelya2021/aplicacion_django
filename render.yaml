@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: aplicacion_django  
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn miweb.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.16
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DISABLE_COLLECTSTATIC
+        value: "1"
